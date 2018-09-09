@@ -40,6 +40,29 @@ h2 {
   left: -50%;
   top: -50%;
   transform: translate(-50%, -50%);
+  overflow: hidden;
+}
+
+#ball:before {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  background-color: #222;
+  width: 120%;
+  height: 120%;
+  margin: -35% -30%;
+  filter: blur(5px);
+}
+
+#ball:after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  background-color: white;
+  width: 30%;
+  height: 30%;
+  margin: 15% 20%;
+  filter: blur(7px);
 }
 
 footer {

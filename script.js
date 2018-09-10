@@ -11,9 +11,14 @@
     const position = { x: width / 2, y: height / 2 }
     const acceleration = { x: 0, y: 0 }
 
-    const moveBall = ({ beta, gamma }) => {
-      acceleration.x += gamma * 0.003
-      acceleration.y += beta * 0.003
+    const setGravity = ({ beta, gamma }) => {
+      acceleration.x += gamma * 0.005
+      acceleration.y += beta * 0.005
+    }
+
+    const moveBall = () => {
+      acceleration.x *= 0.993
+      acceleration.y *= 0.993
       position.x += acceleration.x
       position.y += acceleration.y
 
@@ -36,7 +41,8 @@
       ball.style.left = `${ position.x }px`
     }
 
-    window.addEventListener('deviceorientation', moveBall)
+    setInterval(moveBall, 3)
+    window.addEventListener('deviceorientation', setGravity)
   } else {
     const message =
       `Unfortunatelly your devide don't support this aplication 😔`

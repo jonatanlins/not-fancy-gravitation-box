@@ -72,3 +72,18 @@ footer {
   width: 100%;
   justify-content: space-between;
 }
+
+footer * {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.icon {
+  height: 1em;
+  margin: 0 0.35em;
+}
+
+.icon.big {
+  height: 2em;
+}
